@@ -1,0 +1,3 @@
+/ buscar "archivo.txt" --directorio=home
+# config version 2
+& descargar paquete --verbose

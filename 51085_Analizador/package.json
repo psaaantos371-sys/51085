@@ -1,0 +1,17 @@
+{
+  "name": "analizador-comandos-25914",
+  "version": "1.0.0",
+  "description": "Analizador de Comandos con ANTLR4 y JavaScript - Tema 25914_20",
+  "type": "module",
+  "main": "index.js",
+  "scripts": {
+    "start": "node index.js",
+    "test": "echo \"Sin test configurado\" && exit 0"
+  },
+  "keywords": ["antlr4", "comandos", "analizador", "parser"],
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "antlr4": "^4.13.2"
+  }
+}

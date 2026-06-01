@@ -1,0 +1,21 @@
+Gramática EBNF del lenguaje de comandos - Tema 25914_20
+
+<Comando>            ::= <PrefijoComando> <NombreComando> {<Argumento>}*
+<PrefijoComando>     ::= "!" | "/" | "#" | "&"
+<NombreComando>      ::= <Palabra>
+<Argumento>          ::= <ArgumentoPosicional> | <ArgumentoOpcional>
+<ArgumentoPosicional>::= <Texto> | <Palabra> | <Numero>
+<ArgumentoOpcional>  ::= "--" <NombreArgumento> ["=" <ValorArgumento>]
+                       | "-" <Letra> [<ValorArgumento>]
+<NombreArgumento>    ::= <Palabra>
+<ValorArgumento>     ::= <Texto> | <Numero> | <Palabra>
+<Texto>              ::= "'" [^']* "'" | '"' [^"]* '"'
+<Palabra>            ::= [a-zA-ZáéíóúÁÉÍÓÚüÜñÑ] [a-zA-Z0-9_áéíóúÁÉÍÓÚüÜñÑ]*
+<Numero>             ::= [0-9]+ [("." [0-9]+)]
+<Letra>              ::= [a-zA-Z]
+
+Semántica según prefijo:
+  !  → Define y ejecuta una función JavaScript
+  /  → Llama una función y muestra su resultado
+  #  → Directiva de configuración (comentario JS)
+  &  → Llama una función de forma asíncrona (await)
